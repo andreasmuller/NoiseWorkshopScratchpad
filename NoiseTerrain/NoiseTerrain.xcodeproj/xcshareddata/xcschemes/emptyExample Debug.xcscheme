@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "Empty.app"
-            BlueprintName = "Empty"
-            ReferencedContainer = "container:Empty.xcodeproj">
+            BlueprintName = "NoiseTerrain"
+            ReferencedContainer = "container:NoiseTerrain.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -54,8 +54,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "Empty.app"
-            BlueprintName = "Empty"
-            ReferencedContainer = "container:Empty.xcodeproj">
+            BlueprintName = "NoiseTerrain"
+            ReferencedContainer = "container:NoiseTerrain.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

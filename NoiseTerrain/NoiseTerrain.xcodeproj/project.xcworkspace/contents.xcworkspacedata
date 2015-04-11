@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Empty.xcodeproj">
+      location = "self:NoiseTerrain.xcodeproj">
    </FileRef>
 </Workspace>
