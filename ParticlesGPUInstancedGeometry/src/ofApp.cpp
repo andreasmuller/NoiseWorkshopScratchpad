@@ -12,7 +12,7 @@ void ofApp::setup()
 	camera.setMovementMaxSpeed( 0.1f );
 	
 	int textureSize = 128;
-	int numParticles = textureSize * textureSize;
+	numParticles = textureSize * textureSize;
 	
 	// Allocate buffers
 	ofFbo::Settings fboSettings;
@@ -65,7 +65,11 @@ void ofApp::setup()
 	particleData.source()->getTextureReference(0).loadData( (float*)&startPosAndAge[0].x,	 textureSize, textureSize, GL_RGBA );
 	
 	updateShader.load("Shaders/Particles/GL2/Update");
-	drawShader.load("Shaders/Particles/GL2/DrawPixel");
+	drawShader.load("Shaders/Particles/GL2/Draw");
+	
+	ofBoxPrimitive box( 0.15, 0.15,  0.3 );
+	singleParticleMesh.append( box.getMesh() );
+	singleParticleMesh.setMode( OF_PRIMITIVE_TRIANGLES );
 }
 
 //-----------------------------------------------------------------------------------------
@@ -114,10 +118,15 @@ void ofApp::draw()
 			ofDrawGridPlane( 10, 10, false );
 		ofPopMatrix();
 
-	ofSetColor( ofColor::white );
+		ofSetColor( ofColor::white );
 		drawShader.begin();
+	
 			drawShader.setUniformTexture("u_positionAndAgeTex", particleData.source()->getTextureReference(0), 0 );
-			mesh.draw();
+			drawShader.setUniform2f("u_resolution", particleData.source()->getWidth(), particleData.source()->getHeight() );
+	
+			//mesh.draw();
+			singleParticleMesh.drawInstanced( OF_MESH_FILL, numParticles );
+	
 		drawShader.end();
 	
 	camera.end();

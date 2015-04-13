@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>199119CF-7331-4FF1-A98D-BFA93575F515</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Particles</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>19FECFE6CBC662596F309FDF79836C1420B291DB</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/andreasmuller/ofxAutoReloadedShader.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ParticlesGPUInstancedGeometry/Particles.xcodeproj</string>
+	<string>ParticlesGPUInstancedGeometry/Particles.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>19FECFE6CBC662596F309FDF79836C1420B291DB</key>

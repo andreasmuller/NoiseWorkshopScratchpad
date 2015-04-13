@@ -3,8 +3,8 @@
 #extension GL_ARB_draw_buffers : enable
 
 #pragma include "Shaders/Common/ShaderHelpers.glslinc"
-#pragma include "Shaders/Common/Noise4D.glslinc"
-//#pragma include "Shaders/Common/SimplexNoiseDerivatives4D.glslinc"
+//#pragma include "Shaders/Common/Noise4D.glslinc"
+#pragma include "Shaders/Common/SimplexNoiseDerivatives4D.glslinc"
 
 
 uniform sampler2D u_positionAndAgeTex;
@@ -37,7 +37,7 @@ void main (void)
 
 	vec3 noisePos = pos * 0.2;
 	//vel += normalize(getNoiseOffset(vec4(noisePos, u_time * 0.2))) * 0.9;
-	//vel += curlNoise( noisePos, u_time * 0.6, 3, 0.5 ) * 0.9;
+	vel += curlNoise( noisePos, u_time * 0.6, 3, 0.5 ) * 0.9;
 
 	vec3 newPos = pos + vel * u_timeStep;
 	pos = newPos;

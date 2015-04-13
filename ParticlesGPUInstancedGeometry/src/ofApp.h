@@ -21,8 +21,11 @@ class ofApp : public ofBaseApp
 
 		void keyPressed(int key);
 	
+		ofVboMesh				singleParticleMesh;
+	
 		float					particleMaxAge;
 		FboPingPong				particleData;
+		int						numParticles;
 	
 		ofxFirstPersonCamera	camera;
 		ofTrueTypeFontExt		fontSmall;
