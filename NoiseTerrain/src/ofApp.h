@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "math/MathUtils.h"
+#include "Math/MathUtils.h"
 
 class ofApp : public ofBaseApp
 {
@@ -29,7 +29,7 @@ class ofApp : public ofBaseApp
 			
 			float frequency = ofMap( mx, 0, 1, 0.1, 1.0 );
 			
-			int res = 20;
+			int res = 100;
 			ofVec3f size(5, 1, 5);
 			
 			ofMesh mesh;
@@ -109,7 +109,8 @@ class ofApp : public ofBaseApp
 		ofVec3f getTerrain( float _x, float _y, float _frequency, float _magnitude )
 		{
 			ofVec3f p( _x, 0, _y );
-			p.y = ofNoise( p.x * _frequency, p.z * _frequency ) * _magnitude;
+			//p.y = ofNoise( p.x * _frequency, p.z * _frequency ) * _magnitude;
+			p.y = MathUtils::fbm( ofVec2f(p.x * _frequency, p.z * _frequency), 4, 2.0, 0.5 ) * _magnitude;
 			return p;
 		}
 	
